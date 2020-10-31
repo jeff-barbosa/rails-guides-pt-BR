@@ -812,14 +812,14 @@ config.active_job.queue_adapter = :inline
 config.active_storage.service = :local_test
 ```
 
-Discarding Files Stored During Integration Tests
+Descartando arquivos armazenados durante testes de integração
 -------------------------------------------
 
-Similarly to System Tests, files uploaded during Integration Tests will not be
-automatically cleaned up. If you want to clear the files, you can do it in an
-`after_teardown` callback. Doing it here ensures that all connections created
-during the test are complete and you won't receive an error from Active Storage
-saying it can't find a file.
+Similarmente aos testes de sistema, arquivos enviados durante testes de integração
+não serão automaticamente descartados. Se você deseja limpar os arquivos, você tem
+que fazer isso no callback `after_teardown`. Fazendo isso aqui garante que todas as
+conexões criadas durante o teste estão completas e você não receberá um erro do
+*Active Storage* informando que não foi possível encontrar um arquivo.
 
 ```ruby
 module RemoveUploadedFiles
